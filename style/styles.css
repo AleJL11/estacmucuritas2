@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", "Varela Round", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #020410;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/fondo.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container .logreg-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container .logreg-box .form-box.forget {
+  transform: translateX(500px);
+  transition: transform 0.6s ease;
+  transition-delay: 0s;
+}
+.container .logreg-box .form-box.login {
+  transform: translateX(0);
+  transition: transform 0.6s ease;
+  transition-delay: 0.7s;
+  display: flex;
+  flex-direction: column;
+}
+.container .logreg-box .form-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 0 10px 10px 0;
+  color: black;
+}
+.container .logreg-box .form-box h2 {
+  font-size: 32px;
+  text-align: center;
+}
+.container .logreg-box .form-box .input-box {
+  position: relative;
+  width: 240px;
+  height: 50px;
+  border-bottom: 2px solid #e4e4e4;
+  margin: 30px 0;
+}
+.container .logreg-box .form-box .input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  padding-right: 28px;
+}
+.container .logreg-box .form-box .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+.container .logreg-box .form-box .input-box .icon {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  font-size: 19px;
+  cursor: pointer;
+}
+.container .logreg-box .form-box .input-box input:focus ~ label, .container .logreg-box .form-box .input-box input:valid ~ label {
+  top: -5px;
+}
+.container .logreg-box .form-box .requirements .error-message {
+  color: red;
+  margin: auto;
+  padding-top: 20px;
+  font-weight: bold;
+}
+.container .logreg-box .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .logreg-box .modal-body .input-box_create {
+  position: relative;
+  width: 240px;
+  height: 50px;
+  border-bottom: 2px solid #e4e4e4;
+  margin: 30px 0;
+}
+.container .logreg-box .modal-body .input-box_create input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  padding-right: 28px;
+}
+.container .logreg-box .modal-body .input-box_create label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+.container .logreg-box .modal-body .input-box_create .icon {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  font-size: 19px;
+  cursor: pointer;
+}
+.container .logreg-box .modal-body .input-box_create input:focus ~ label, .container .logreg-box .modal-body .input-box_create input:valid ~ label {
+  top: -5px;
+}
+.container .logreg-box .remember-forget {
+  font-size: 14.5px;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .logreg-box .remember-forget label input {
+  accent-color: black;
+  margin-right: 3px;
+}
+.container .logreg-box .remember-forget a {
+  color: black;
+  text-decoration: none;
+}
+.container .logreg-box .remember-forget a:hover {
+  text-decoration: underline;
+}
+.container .logreg-box .btn2 {
+  width: 100%;
+  height: 45px;
+  background: #c4103d;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #e4e4e4;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.container .logreg-box .btn {
+  background: #c4103d;
+  border: none;
+  width: 40%;
+  height: 45px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.container .logreg-box.active .form-box.login {
+  transform: translateX(670px);
+  transition-delay: 0s;
+}
+.container .logreg-box.active .form-box.forget {
+  transform: translateX(-140px);
+  transition-delay: 0.7s;
+}
+
+/*@media only screen and (max-width: 600px)
+ *  .container
+ *      .logreg-box
+ *          .form-box
+ *              .input-box
+ *                  width: 300px
+ *          .form-box.forget
+ *              left: 50px */
+@media only screen and (min-width: 600px) {
+  .container .logreg-box .form-box.forget {
+    left: 150px;
+  }
+  .container .logreg-box .form-box .input-box {
+    width: 400px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .logreg-box {
+    width: 50%;
+  }
+  .container .logreg-box .form-box .input-box {
+    width: 250px;
+  }
+  .home_content .container_info {
+    grid-template-columns: repeat(3, 220px) !important;
+    height: 270px !important;
+  }
+  .home_content .table {
+    display: block !important;
+    width: 95% !important;
+  }
+  .table_info {
+    display: none !important;
+  }
+  .sidebar.active ~ .home_content .container_info {
+    grid-template-columns: repeat(2, 220px) !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container .logreg-box .form-box .input-box {
+    width: 320px;
+  }
+  .container .logreg-box .form-box.forget {
+    left: 170px;
+  }
+  .home_content .container_info {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .sidebar.active ~ .home_content .container_info {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}/*# sourceMappingURL=styles.css.map */

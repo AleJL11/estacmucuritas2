@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", "Varela Round", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100px;
+  background-color: #99a5b8;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+.sidebar .logo_content {
+  border-bottom: 2px solid #4a4949;
+}
+.sidebar .logo_content .logo {
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.sidebar .logo_content i {
+  font-size: 28px;
+  margin-right: 5px;
+}
+.sidebar .logo_content .logo_name {
+  font-size: 20px;
+  font-weight: 400;
+}
+.sidebar #btn {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  top: 6px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+.sidebar ul {
+  margin-top: 20px;
+  margin-left: -25px;
+}
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 5px 5px;
+  list-style: none;
+  line-height: 50px;
+}
+.sidebar ul li .tooltip {
+  position: absolute;
+  left: 122px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 122px;
+  background-color: #fff;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0 !important;
+  pointer-events: none;
+  display: block;
+}
+.sidebar ul li input {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: #d7d5d7;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
+}
+.sidebar ul li .fa-magnifying-glass {
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.5s ease;
+}
+.sidebar ul li a {
+  color: #000;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.sidebar ul li a .links_name {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.sidebar ul li i {
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+.sidebar ul li a:hover {
+  color: #99a5b8;
+  background-color: #fff;
+}
+.sidebar ul li:hover .tooltip {
+  transition: all 0.5s ease;
+  opacity: 1 !important;
+  top: 50%;
+}
+.sidebar .profile_content {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.sidebar .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background-color: none;
+  transition: all 0.5s ease;
+}
+.sidebar .profile_content .profile .profile_details {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sidebar .profile_content .profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+.sidebar .profile_content .profile .profile_details .name_job {
+  margin-left: 10px;
+}
+.sidebar .profile_content .profile .profile_details .name_job .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+.sidebar .profile_content .profile #log_out {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #888888;
+  transition: all 0.5s ease;
+}
+
+.home_content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 100px);
+  left: 100px;
+  transition: all 0.5s ease;
+  background-color: #c7d1dc;
+  overflow-y: scroll;
+}
+.home_content .text {
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  background-color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+.home_content .container_info {
+  width: 100%;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+}
+.home_content .container_info .box_info {
+  background-color: #fff;
+  width: 180px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border-radius: 5px;
+}
+.home_content .container_info .box_info i {
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+.home_content .container_info .box_info .box_text {
+  display: grid;
+  place-items: center;
+}
+.home_content .container_info .box_info .box_text p {
+  font-size: 20px;
+  font-weight: 300;
+}
+.home_content .container_info .box_info .box_text .text_gray {
+  color: #8E8E8E;
+  margin-top: -30px;
+}
+.home_content .container_info .box_info .box_text button {
+  border: none;
+  background: #4d5a6f;
+  padding: 10px;
+  border-radius: 50px;
+  color: #fff;
+}
+.home_content .table_info {
+  width: 100%;
+  height: 170px;
+  display: grid;
+  place-items: center;
+}
+.home_content .table_info button {
+  border: none;
+  padding: 20px 40px;
+  font-size: 20px;
+  background-color: #4d5a6f;
+  color: #fff;
+  border-radius: 15px;
+  letter-spacing: 2px;
+}
+.home_content .form_payment {
+  display: grid;
+  place-items: center;
+}
+.home_content .form_payment .input-box {
+  position: relative;
+  width: 400px;
+  height: 50px;
+  border-bottom: 2px solid #e4e4e4;
+  margin: 30px 0;
+}
+.home_content .form_payment .input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  padding-right: 28px;
+}
+.home_content .form_payment .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s ease;
+}
+.home_content .form_payment .input-box .icon {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  font-size: 19px;
+  cursor: pointer;
+}
+.home_content .form_payment .input-box input:focus ~ label, .home_content .form_payment .input-box input:valid ~ label {
+  top: -5px;
+}
+.home_content .table_estado_modal {
+  width: 100%;
+  border-collapse: collapse;
+}
+.home_content .table_estado_modal th {
+  border-bottom: 1px solid #000;
+  padding: 0 10px;
+}
+.home_content .table_estado_modal td {
+  padding: 0 10px;
+}
+.home_content .table {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  width: 97%;
+  height: auto;
+  display: none;
+}
+.home_content .table .table_estado {
+  width: 100%;
+  border-collapse: collapse;
+}
+.home_content .table .table_estado th {
+  border-bottom: 1px solid #000;
+  padding: 0 10px;
+}
+.home_content .table .table_estado td {
+  padding: 0 10px;
+}
+
+.active {
+  width: 240px;
+}
+
+.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.active #btn {
+  left: 90%;
+}
+
+.sidebar ul li .fa-magnifying-glass:hover {
+  background-color: #fff;
+  color: #1d1b31;
+}
+
+.sidebar.active ul li .tooltip {
+  display: none;
+}
+
+.sidebar.active ul li input {
+  width: 100%;
+}
+
+.sidebar.active .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar.active .profile_content .profile {
+  background-color: #888888;
+}
+
+.sidebar.active .profile_content .profile .profile_details {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar.active .profile_content .profile #log_out {
+  left: 88%;
+  background-color: none;
+}
+
+.sidebar.active ~ .home_content {
+  width: calc(100% - 240px);
+  left: 240px;
+}/*# sourceMappingURL=estacmucuritas.css.map */
